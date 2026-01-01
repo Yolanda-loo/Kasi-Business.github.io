@@ -3,131 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KasiKapital: Empower township hustlers with investor matches. Fund your SA small business dream today!">
-    <title>KasiKapital - Unlock Your Hustle: Investors for Township Titans</title>
+    <meta name="description" content="KasiKapital: Empower township hustlers with investor matches.">
+    <title>KasiKapital | Fund Your Fire 🔥</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #f8f8f8; }
-        .hero { background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 1rem; }
-        h1 { font-family: 'Ubuntu', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.5rem; margin: 0.5rem 0 1.5rem; font-weight: 300; }
-        .cta { background: linear-gradient(45deg, #FF6B35, #FF8C00); color: white; border: none; padding: 1rem 2.5rem; font-size: 1.2rem; border-radius: 50px; cursor: pointer; transition: transform 0.3s ease; box-shadow: 0 4px 15px rgba(255,107,53,0.3); }
-        .cta:hover { transform: scale(1.05); }
-        .hero small { opacity: 0.9; font-style: italic; }
-        .section { padding: 4rem 1rem; }
+        :root {
+            /* Brand Colors */
+            --primary: #FF6B35;    /* Vibrant Orange (Energy) */
+            --secondary: #004d40;  /* Deep Teal (Money/Growth) */
+            --accent: #FFC107;     /* Gold (Success) */
+            --dark: #121212;
+            --light: #F8F9FA;
+            --white-glass: rgba(255, 255, 255, 0.95);
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.1; margin-top: 0; }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--secondary); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav {
+            background: var(--secondary);
+            color: white !important;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            transition: transform 0.2s;
+        }
+        .btn-nav:hover { transform: scale(1.05); }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Using a high-quality Unsplash image as placeholder */
+            background: linear-gradient(135deg, rgba(0,77,64,0.9), rgba(255,107,53,0.8)), url('https://images.unsplash.com/photo-1523821741486-1e5242523b71?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem 2rem; /* Added top padding for fixed nav */
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: slideUp 1s ease-out;
+        }
+
+        h1 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.95; }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+        .btn-outline:hover { background: white; color: var(--secondary); }
+
+        /* General Layout */
+        .section { padding: 5rem 1rem; }
         .container { max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; font-family: 'Ubuntu', sans-serif; color: #FF6B35; margin-bottom: 3rem; font-size: 2.5rem; }
-        .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .col h2 { font-family: 'Ubuntu', sans-serif; color: #228B22; margin-bottom: 1rem; font-size: 2rem; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 1rem 0; font-size: 1.1rem; padding-left: 1.5rem; position: relative; }
-        li::before { content: attr(data-icon); position: absolute; left: 0; font-weight: bold; }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s ease; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(34,139,34,0.2); }
-        .card h3 { color: #228B22; margin-bottom: 1rem; font-size: 1.5rem; }
-        .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        blockquote { background: white; padding: 2rem; border-left: 5px solid #FF6B35; font-style: italic; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        blockquote:hover { transform: scale(1.02); }
-        cite { display: block; text-align: right; font-weight: bold; color: #666; margin-top: 1rem; }
-        footer { background: #333; color: white; text-align: center; padding: 2rem 1rem; }
-        footer a { color: #FF6B35; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        .socials { margin: 1rem 0; }
-        #signup { background: #228B22; color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.7); } 70% { box-shadow: 0 0 0 10px rgba(255,107,53,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); } }
-        @media (max-width: 768px) { .split { grid-template-columns: 1fr; gap: 2rem; } .cards-grid, .quotes { grid-template-columns: 1fr; } }
-        #testimonials { background: #f8f9fa; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 0.5rem; }
+        .section-header span { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.85rem; }
+
+        /* --- NEW: CALCULATOR SECTION --- */
+        .calculator-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: -80px auto 0; /* Pulls it up into the hero */
+            position: relative;
+            z-index: 10;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            margin: 2rem 0;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+        .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: center; }
+        .calc-val { font-size: 2.5rem; color: var(--secondary); font-weight: 700; font-family: 'Space Grotesk'; }
+
+        /* Split Section */
+        .split-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+        .split-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+        .list-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .list-item i { font-size: 1.2rem; margin-right: 1rem; margin-top: 5px; }
+        .list-item.bad i { color: #e53935; }
+        .list-item.good i { color: #43a047; }
+
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); border-color: var(--primary); }
+        .icon-box {
+            width: 60px; height: 60px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem;
+        }
+
+        /* --- NEW: STATS TICKER --- */
+        .stats-bar { background: var(--dark); padding: 4rem 1rem; color: white; text-align: center; }
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1000px; margin: auto; }
+        .stat-item h2 { font-size: 3.5rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .stat-item p { font-size: 1.1rem; opacity: 0.8; }
+
+        /* Testimonials */
+        .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .quote-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .quote-card::before { content: '"'; font-size: 4rem; color: #eee; position: absolute; top: 10px; left: 20px; }
+
+        /* --- NEW: FAQ --- */
+        .faq-box { max-width: 800px; margin: auto; }
+        details {
+            background: white;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        details:hover { border-color: var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        summary { font-weight: 700; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--primary); font-weight: 300; }
+        details[open] summary::after { content: '-'; }
+        details p { margin-top: 1rem; color: #555; padding-top: 1rem; border-top: 1px solid #f0f0f0; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #888; padding: 4rem 1rem 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1200px; margin: auto; margin-bottom: 3rem; }
+        .footer-col h4 { color: white; margin-bottom: 1.5rem; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col li { margin-bottom: 0.8rem; }
+        .footer-col a { color: #888; text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: var(--primary); }
+
+        /* Animation Classes */
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 2.5rem; }
+            .calculator-box { margin: 2rem 1rem; padding: 1.5rem; }
+            .calc-results { grid-template-columns: 1fr; gap: 1rem; }
+            .stats-grid { flex-direction: column; gap: 2rem; }
+            .btn-outline { margin: 1rem 0 0 0; display: block; }
+        }
     </style>
 </head>
 <body>
-    <header role="banner" aria-label="Main header">
-        <div class="hero" style="background-image: url('hero-bg.jpg');" aria-label="Vibrant township market scene">
-            <div class="hero-content">
-                <h1>KasiKapital</h1>
-                <p>Unlock Your Hustle: Investors for Township Titans</p>
-                <button class="cta" onclick="scrollToSection('signup')">Join the Hustle Now</button>
-                <small>From spaza to superstar—fund your fire! 🔥</small>
+
+    <nav>
+        <a href="#" class="logo">Kasi<span>Kapital</span></a>
+        <div class="nav-links">
+            <a href="#how-it-works">How it Works</a>
+            <a href="#features">Features</a>
+            <a href="#stories">Stories</a>
+            <a href="#join" class="btn-nav">Get Funded</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Unlock Your Hustle <br> <span style="color: var(--accent);">Township Titans</span></h1>
+            <p>The first AI-powered matchmaker connecting township businesses with investors who get the vibe. From spaza to superstar.</p>
+            <div style="margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="scrollToSection('signup')">Join the Hustle</button>
+                <button class="btn btn-outline">Watch Video <i class="fas fa-play-circle"></i></button>
             </div>
         </div>
     </header>
-    
-    <main role="main">
-        <section id="problem" class="section">
-            <div class="container">
-                <div class="split">
-                    <div class="col">
-                        <h2>The Kasi Grind: Real Challenges</h2>
-                        <ul>
-                            <li data-icon="🚫">❌ Limited access to capital for township startups</li>
-                            <li data-icon="🚫">❌ Gatekept by big-city VCs who don't get the vibe</li>
-                            <li data-icon="🚫">❌ Slow loans from banks—hustle waits for no one</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h2>Our Solution: Fuel the Fire</h2>
-                        <ul>
-                            <li data-icon="✅">✅ AI matches in 24 hours—tailored to your spaza or salon</li>
-                            <li data-icon="✅">✅ Video pitches from your phone, no fancy suits needed</li>
-                            <li data-icon="✅">✅ Secure deals with escrow—trust built in township style</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="features" class="section">
-            <div class="container">
-                <h2 class="section-title">Why KasiKapital? Hustle-Proof Features</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>Quick Profile Setup</h3>
-                        <p>Upload your story in minutes—revenue snaps, 1-min vid. No paperwork blues.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Smart Investor Matches</h3>
-                        <p>AI connects you to funders who love food stalls, tech vibes, or beauty empires.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Impact Tracker</h3>
-                        <p>Watch jobs created, revenue soar—share badges to flex your wins.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Virtual Braai Nights</h3>
-                        <p>Mixers for real chats over stories. Network like pros, vibe like family.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="testimonials" class="section">
-            <div class="container">
-                <h2 class="section-title">Hustlers Who Leveled Up</h2>
-                <div class="quotes">
-                    <blockquote>
-                        <p>"Turned my hair salon into a chain—KasiKapital made the diaspora dollars flow easy!"</p>
-                        <cite>— Nomsa, Khayelitsha</cite>
-                    </blockquote>
-                    <blockquote>
-                        <p>"From street food to franchise: Matches hit in days. Real growth, real gratitude."</p>
-                        <cite>— Thabo, Soweto</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer role="contentinfo" aria-label="Footer">
+
+    <section id="calculator">
         <div class="container">
-            <p>&copy; 2026 KasiKapital. Powered by township fire 🔥 | <a href="#about">About</a> | <a href="#privacy">Privacy</a> | <a href="#contact">Contact</a></p>
-            <div class="socials">
-                Follow the vibe: <a href="https://x.com/kasikapital" aria-label="X (Twitter)">X</a> | <a href="https://instagram.com/kasikapital" aria-label="Instagram">IG</a>
+            <div class="calculator-box reveal">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--secondary);">How much fire can you fund?</h3>
+                    <p style="color: #666;">Drag the slider to see your potential funding.</p>
+                </div>
+
+                <label style="font-weight: 700; color: var(--dark);">Monthly Revenue: <span id="revDisplay" style="color: var(--primary);">R 50,000</span></label>
+                <input type="range" min="5000" max="200000" value="50000" step="5000" class="slider" id="revenueRange">
+
+                <div class="calc-results">
+                    <div>
+                        <p style="margin: 0; color: #888; font-size: 0.9rem;">Estimated Funding</p>
+                        <div class="calc-val" id="fundingAmount" style="color: var(--primary);">R 150,000</div>
+                    </div>
+                    <div>
+                        <p style="margin: 0; color: #888; font-size: 0.9rem;">Avg. Match Time</p>
+                        <div class="calc-val" style="color: var(--secondary);">48 Hrs</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: #aaa;">*Estimates based on typical KasiKapital investor activity.</p>
             </div>
-            <p id="signup">Ready to hustle? Download the app or email <a href="mailto:hello@kasikapital.com">hello@kasikapital.com</a></p>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span>The Reality</span>
+                <h2>The Grind vs. The Growth</h2>
+            </div>
+            
+            <div class="split-grid">
+                <div class="split-card reveal">
+                    <h3>🚫 The Old Way</h3>
+                    <div class="list-item bad"><i class="fas fa-times-circle"></i> <span>Banks asking for paperwork you don't have.</span></div>
+                    <div class="list-item bad"><i class="fas fa-times-circle"></i> <span>"City" investors who don't understand the Kasi economy.</span></div>
+                    <div class="list-item bad"><i class="fas fa-times-circle"></i> <span>Waiting months just to get a 'No'.</span></div>
+                </div>
+
+                <div class="split-card reveal" style="border-left-color: var(--secondary);">
+                    <h3>✅ The KasiKapital Way</h3>
+                    <div class="list-item good"><i class="fas fa-check-circle"></i> <span>AI matches in 24 hours based on revenue, not suits.</span></div>
+                    <div class="list-item good"><i class="fas fa-check-circle"></i> <span>Video pitches: Sell your story, not your spreadsheet.</span></div>
+                    <div class="list-item good"><i class="fas fa-check-circle"></i> <span>Escrow security: Trust built into every deal.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span>Why Us?</span>
+                <h2>Tools Built for Hustlers</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Quick Profile Setup</h3>
+                    <p>Upload your story in minutes. Snap your revenue, record a 1-min vid, and you're live.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i class="fas fa-robot"></i></div>
+                    <h3>Smart AI Matching</h3>
+                    <p>Our bot connects you to funders who specifically want food stalls, tech vibes, or beauty.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                    <h3>Impact Tracker</h3>
+                    <p>Watch your revenue soar. We track jobs created so you can flex your wins to investors.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i class="fas fa-users"></i></div>
+                    <h3>Virtual Braai</h3>
+                    <p>Community mixers. Network like pros, vibe like family. Real chats over real stories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar" id="statsSection">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2 class="counter" data-target="540">0</h2>
+                <p>Businesses Funded</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="12">0</h2>
+                <p>Million Rands Flowing</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="98">0</h2>
+                <p>% Repayment Rate</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="stories" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span>Success Stories</span>
+                <h2>Hustlers Who Leveled Up</h2>
+            </div>
+            <div class="quote-grid">
+                <div class="quote-card reveal">
+                    <p>"Turned my hair salon into a chain—KasiKapital made the diaspora dollars flow easy! No bank headaches."</p>
+                    <div style="margin-top: 1rem; font-weight: bold; color: var(--secondary);">— Nomsa, Khayelitsha</div>
+                </div>
+                <div class="quote-card reveal">
+                    <p>"From street food to franchise. Matches hit in days. Real growth, real gratitude. Keep pushing!"</p>
+                    <div style="margin-top: 1rem; font-weight: bold; color: var(--secondary);">— Thabo, Soweto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section" style="background: white;">
+        <div class="container faq-box">
+            <div class="section-header reveal">
+                <span>Got Questions?</span>
+                <h2>We Keep It Transparent</h2>
+            </div>
+            
+            <details class="reveal">
+                <summary>Do I need a formal business plan?</summary>
+                <p>No! Just your revenue history (snaps of bank statements or POS) and a 1-minute video telling us who you are.</p>
+            </details>
+            <details class="reveal">
+                <summary>Is this a loan or equity?</summary>
+                <p>We offer both. You can choose to pay back a loan with interest, or give a small % of ownership for mentorship and cash.</p>
+            </details>
+            <details class="reveal">
+                <summary>How fast is the money released?</summary>
+                <p>Once you match with an investor and sign the digital agreement, funds sit in Escrow and are released within 48 hours.</p>
+            </details>
+             <details class="reveal">
+                <summary>What are the fees?</summary>
+                <p>It's free to join. We only take a small success fee (2%) once you actually get funded.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer id="signup">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white;">Kasi<span>Kapital</span></a>
+                <p style="margin-top: 1rem;">Powered by township fire. We build bridges between raw ambition and capital.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#">For Startups</a></li>
+                    <li><a href="#">For Investors</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Hustle</a></li>
+                    <li><a href="#">Escrow Rules</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get the App</h4>
+                <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Download for Android</button>
+                <div class="socials">
+                    <a href="#" style="font-size: 1.5rem; margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="font-size: 1.5rem; margin-right: 1rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #333; padding-top: 2rem;">
+            <p>&copy; 2026 KasiKapital. All rights reserved.</p>
         </div>
     </footer>
 
@@ -136,11 +469,65 @@
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Pulse CTA on load
+        /* --- 1. CALCULATOR LOGIC --- */
+        const slider = document.getElementById('revenueRange');
+        const output = document.getElementById('fundingAmount');
+        const revDisplay = document.getElementById('revDisplay');
+
+        slider.oninput = function() {
+            // Update the display of the slider value
+            revDisplay.innerHTML = "R " + parseInt(this.value).toLocaleString();
+            
+            // Logic: Funding is approx 3x monthly revenue
+            let funding = this.value * 3;
+            output.innerHTML = "R " + funding.toLocaleString();
+        }
+
+        /* --- 2. SCROLL ANIMATIONS (IntersectionObserver) --- */
         window.addEventListener('load', () => {
-            const cta = document.querySelector('.cta');
-            cta.style.animation = 'pulse 2s infinite';
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(reveal => observer.observe(reveal));
         });
+
+        /* --- 3. NUMBER COUNTER ANIMATION --- */
+        let statsSection = document.getElementById('statsSection');
+        let hasAnimated = false; // Ensure it only runs once
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                const counters = document.querySelectorAll('.counter');
+                const speed = 100; // Lower is faster
+
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            // Add 'M+' for millions, '+' for others
+                            counter.innerText = target + (target === 12 ? "M+" : "+");
+                        }
+                    };
+                    updateCount();
+                });
+            }
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
     </script>
 </body>
 </html>
